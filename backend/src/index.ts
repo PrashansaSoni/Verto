@@ -21,10 +21,28 @@ const PORT = process.env.PORT || 3001;
 
 // Security middleware
 app.use(helmet());
+const allowedOrigins = [
+  "https://social-media-analyser-ufe4.vercel.app", // production frontend
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "http://localhost:5173"
+];
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
-  credentials: true
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // allow non-browser requests (curl, Postman, etc.)
+    if (allowedOrigins.indexOf(origin) === -1) {
+      return callback(new Error("CORS policy: Not allowed"), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+// Preflight for all routes
+app.options('*', cors());
 
 // Rate limiting
 const limiter = rateLimit({
