@@ -15,14 +15,9 @@ build/
 .env.test.local
 .env.production.local
 
-# Database
-database/
-*.db
-*.sqlite
-*.sqlite3
 
-# Uploads
-uploads/
+
+
 
 # Logs
 logs/
