@@ -22,7 +22,7 @@ const PORT = process.env.PORT || 3001;
 // Security middleware
 app.use(helmet());
 const allowedOrigins = [
-  "https://social-media-analyser-ufe4.vercel.app", // production frontend
+  "https://verto-76e7.vercel.app", // production frontend
   "http://localhost:3000",
   "http://localhost:3001",
   "http://localhost:5173"
