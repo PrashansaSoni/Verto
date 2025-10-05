@@ -63,10 +63,10 @@ Before setting up the project, ensure you have the following installed:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/verto-quiz-application.git
+git clone https://github.com/PrashansaSoni/verto-quiz-application.git
 cd verto-quiz-application
 ```
-> **Note**: Replace `your-username` with your actual GitHub username or organization name.
+
 
 ### 2. Install Dependencies
 ```bash
@@ -224,4 +224,44 @@ verto-quiz-application/
 - `GET /api/user/quizzes/:id/questions` - Get quiz questions
 - `POST /api/user/quizzes/:id/submit` - Submit quiz answers
 - `GET /api/user/quizzes/:id/result` - Get quiz result
+
+
+## 🧪 Testing
+
+The project includes comprehensive test suites with a focus on critical scoring logic.
+
+### Backend Tests
+
+Comprehensive test suite with *29 test cases* covering all scoring scenarios:
+
+bash
+# Navigate to backend directory
+cd backend
+
+# Install dependencies (if not already installed)
+npm install
+
+# Run all tests
+npm test
+
+# Run tests in watch mode (auto-rerun on changes)
+npm run test:watch
+
+# Run tests with detailed coverage report
+npm run test:coverage
+
+
+#### Test Coverage
+
+- ✅ *MCQ Scoring*: Single correct answer validation
+- ✅ *Multiple Select*: All correct options validation
+- ✅ *True/False*: Binary choice validation
+- ✅ *Negative Marking*: 25% penalty scenarios
+- ✅ *Percentage Calculation*: Precision and rounding
+- ✅ *Edge Cases*: Empty answers, non-existent questions, zero marks
+- ✅ *Mixed Question Types*: Complex scoring scenarios
+
+
+**Thank you for taking the time to review it — your feedback means a lot!**
+
 
