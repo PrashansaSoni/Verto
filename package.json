@@ -13,10 +13,18 @@
     "start": "cd backend && npm start",
     "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install"
   },
-  "keywords": ["quiz", "education", "ai", "react", "nodejs", "typescript"],
+  "keywords": [
+    "quiz",
+    "education",
+    "ai",
+    "react",
+    "nodejs",
+    "typescript"
+  ],
   "author": "Verto Team",
   "license": "MIT",
   "devDependencies": {
+    "baseline-browser-mapping": "^2.9.8",
     "concurrently": "^8.2.2"
   }
 }
